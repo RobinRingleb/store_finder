@@ -75,5 +75,3 @@ public class StoreFinderController {
 		return "storefinder";
 	}
 }
-
-// storefinder.ftl Zeile 15: "mytoys.de" entfernen
