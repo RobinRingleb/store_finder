@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Profile specific logback configuration.
+-->
+
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml" />
+
+    <!-- console logging -->
+    <springProfile name="local">
+        <include resource="org/springframework/boot/logging/logback/console-appender.xml" />
+
+        <root level="INFO">
+            <appender-ref ref="CONSOLE" />
+        </root>
+    </springProfile>
+
+    <!-- file appender configuration -->
+    <springProfile name="dev, stable, live">
+        <!-- references defaults defined in org/springframework/boot/logging/logback/defaults.xml -->
+        <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <encoder>
+                <pattern>${FILE_LOG_PATTERN}</pattern>
+            </encoder>
+            <file>${LOG_FILE}</file> <!-- this is actually the logging.file property, see automagic in *.boot.logging.LogFile -->
+
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <!-- daily rollover with automatic GZIP compression of the archived files -->
+                <fileNamePattern>${LOG_FILE}-%d{yyyy-MM-dd}.gz</fileNamePattern>
+
+                <!-- keep 30 days' worth of history -->
+                <maxHistory>30</maxHistory>
+            </rollingPolicy>
+        </appender>
+    </springProfile>
+
+    <!-- solely file logging for developer and stable -->
+    <springProfile name="dev, stable">
+        <root level="INFO">
+            <appender-ref ref="FILE" />
+        </root>
+    </springProfile>
+
+    <!-- live configuration with graylog -->
+    <springProfile name="dev, stable, live">
+        <!--
+            graylog appender
+                - only ERROR level messages
+
+                - see https://dokumenta.ber.mytoys.de/display/ITSP/shop-graylog
+                - see https://github.com/pukkaone/logback-gelf/tree/1.1.8
+        -->
+        <appender name="GRAYLOG" class="com.github.pukkaone.gelf.logback.GelfAppender">
+            <filter class="ch.qos.logback.classic.filter.LevelFilter">
+                <level>ERROR</level>
+                <onMatch>ACCEPT</onMatch>
+                <onMismatch>DENY</onMismatch>
+            </filter>
+
+            <graylogHost>udp:dev-graylog.ber.mytoys.de</graylogHost> <!-- UDP won't work on a Windows developer machine -->
+            <levelIncluded>true</levelIncluded>
+            <locationIncluded>true</locationIncluded>
+            <loggerIncluded>true</loggerIncluded>
+            <threadIncluded>true</threadIncluded>
+            <facility>msv-js-logging</facility>
+        </appender>
+
+        <root level="INFO">
+            <appender-ref ref="FILE" />
+            <appender-ref ref="GRAYLOG" />
+        </root>
+    </springProfile>
+    
+    <!-- default: console logging 
+	<root level="INFO">
+		<appender-ref ref="CONSOLE" />
+	</root>
+	-->
+</configuration>

@@ -1,0 +1,14 @@
+/target
+/bin
+/log
+/.project
+/.classpath
+/.settings
+/.buildpath
+/.gitflow
+*.class
+/*mytoys*.cmd
+.pmd
+.checkstyle
+.externalToolBuilders
+

@@ -1,0 +1,102 @@
+{
+  "headline": "Unsere Filialen",
+  "info" : "Hier erhalten Sie kompetente Beratung sowie eine gro&szlige Auswahl zu niedrigen Preisen.",
+  "branches" : [
+    {
+      "name": "Aachen",
+      "url": "/c/filiale-aachen.html",
+      "latitude": "50.774706",
+      "longitude": "6.092943"	
+    },
+    {
+      "name": "Berlin-Neuk&oumllln",
+      "url": "/c/filiale-neukoelln.html",
+      "latitude": "52.482156",
+      "longitude": "13.432996"	
+    },
+    {
+      "name": "Berlin-Spandau",
+      "url": "/c/filiale-spandau.html",
+      "latitude": "52.533967",
+      "longitude": "13.196254"	
+    },
+    {
+      "name": "Hamburg",
+      "url": "/c/filiale-hamburg.html",
+      "latitude": "53.551266",
+      "longitude": "10.000302"	
+    },
+    {
+      "name": "Kassel",
+      "url": "/c/filiale-kassel.html",
+      "latitude": "51.316717",
+      "longitude": "9.498359"	
+    },
+    {
+      "name": "K&oumlln-Chorweiler",
+      "url": "/c/filiale-koeln-chorweiler.html",
+      "latitude": "51.021482",
+      "longitude": "6.896119"	
+    },
+    {
+      "name": "K&oumlln-Weiden",
+      "url": "/c/filiale-koeln-weiden.html",
+      "latitude": "50.937151",
+      "longitude": "6.835351"	
+    },
+    {
+      "name": "Leer",
+      "url": "/c/filiale-leer.html",
+      "latitude": "53.230087",
+      "longitude": "7.462657"	
+    },
+    {
+      "name": "L&uumlbeck",
+      "url": "/c/filiale-luebeck.html",
+      "latitude": "53.865105",
+      "longitude": "10.685780"	
+    },
+    {
+      "name": "L&uumldenscheid",
+      "url": "/c/filiale-luedenscheid.html",
+      "latitude": "51.215668",
+      "longitude": "7.629051"	
+    },
+    {
+      "name": "Neuss",
+      "url": "/c/filiale-neuss.html",
+      "latitude": "51.201795",
+      "longitude": "6.718483"	
+    },
+    {
+      "name": "N&uumlrnberg",
+      "url": "/c/filiale-nuernberg.html",
+      "latitude": "49.449639",
+      "longitude": "11.076913"	
+    },
+    {
+      "name": "Siegen",
+      "url": "/c/filiale-siegen.html",
+      "latitude": "50.874164",
+      "longitude": "8.018423"	
+    },
+    {
+      "name": "Stuttgart",
+      "url": "/c/filiale-stuttgart.html",
+      "latitude": "48.782159",
+      "longitude": "9.182135"	
+    },
+    {
+      "name": "Wildau",
+      "url": "/c/filiale-wildau.html",
+      "latitude": "52.314049",
+      "longitude": "13.607404"	
+    },
+    {
+      "name": "Worms",
+      "url": "/c/filiale-worms.html",
+      "latitude": "49.631524",
+      "longitude": "8.365020"	
+    }
+  ]
+}
